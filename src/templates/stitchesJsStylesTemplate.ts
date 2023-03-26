@@ -1,7 +1,7 @@
-export const stitchesJsStylesTemplate = (query: string) => {
+export const stitchesJsStylesTemplate = (componentName: string) => {
     return (
         `import { styled } from "@config/stitches.config"; \n` +
         `\n` +
-        `export const ${query}Container = styled("div", {}) \n` 
+        `export const ${componentName}Container = styled("div", {}) \n` 
     );
 };

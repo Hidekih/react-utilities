@@ -1,6 +1,6 @@
-export const indexTemplate = (query: string) => {
+export const indexTemplate = (componentName: string) => {
     return (
-        `export { ${query} } from "./${query}"; \n` +
-        `export type { ${query}Props } from "./${query}"; \n`
+        `export { ${componentName} } from "./${componentName}"; \n` +
+        `export type { ${componentName}Props } from "./${componentName}"; \n`
     );
 };

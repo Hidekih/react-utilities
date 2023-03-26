@@ -1,7 +1,7 @@
 {
-  "name": "bnp-react",
-  "displayName": "bnp react",
-  "description": "",
+  "name": "react-utilities",
+  "displayName": "React utilities",
+  "description": "React utilities for create a component and more",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.76.0"
@@ -14,33 +14,33 @@
   "contributes": {
     "commands": [
       {
-				"command": "bnp-react.reactCreateComponent",
+				"command": "react-utilities.reactCreateComponent",
 				"title": "React: Create component"
 			},
       {
-				"command": "bnp-react.reactCreateModule",
+				"command": "react-utilities.reactCreateModule",
 				"title": "React: Create module"
 			}
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "bnp-react.reactCreateComponent",
+          "command": "react-utilities.reactCreateComponent",
           "when": "explorerResourceIsFolder"
         },
         {
-          "command": "bnp-react.reactCreateModule",
+          "command": "react-utilities.reactCreateModule",
           "when": "explorerResourceIsFolder"
         }
       ],
       "explorer/context": [
         {
-          "command": "bnp-react.reactCreateComponent",
+          "command": "react-utilities.reactCreateComponent",
           "when": "explorerResourceIsFolder",
           "group": "EditorConfig@1"
         },
         {
-          "command": "bnp-react.reactCreateModule",
+          "command": "react-utilities.reactCreateModule",
           "when": "explorerResourceIsFolder",
           "group": "EditorConfig@2"
         }

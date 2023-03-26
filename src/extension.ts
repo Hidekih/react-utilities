@@ -1,13 +1,12 @@
 import { commands, ExtensionContext } from 'vscode';
-import { mkdirSync, writeFile } from "node:fs";
 
 import { reactCreateComponent } from './commands/reactCreateComponent';
 import { reactCreateModule } from './commands/reactCreateModule';
 
 export function activate(context: ExtensionContext) {
-	let disposableReactCreateComponent = commands.registerCommand('bnp-react.reactCreateComponent', reactCreateComponent);
+	let disposableReactCreateComponent = commands.registerCommand('react-utilities.reactCreateComponent', reactCreateComponent);
 
-	let disposableReactCreateModule = commands.registerCommand('bnp-react.reactCreateModule', reactCreateModule);
+	let disposableReactCreateModule = commands.registerCommand('react-utilities.reactCreateModule', reactCreateModule);
 	
 	context.subscriptions.push(
 		disposableReactCreateComponent, 
