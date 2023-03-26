@@ -2,7 +2,7 @@
   "name": "react-utilities",
   "displayName": "React utilities",
   "description": "React utilities for create a component and more",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -14,13 +14,13 @@
   "contributes": {
     "commands": [
       {
-				"command": "react-utilities.reactCreateComponent",
-				"title": "React: Create component"
-			},
+        "command": "react-utilities.reactCreateComponent",
+        "title": "React: Create component"
+      },
       {
-				"command": "react-utilities.reactCreateModule",
-				"title": "React: Create module"
-			}
+        "command": "react-utilities.reactCreateModule",
+        "title": "React: Create module"
+      }
     ],
     "menus": {
       "commandPalette": [
