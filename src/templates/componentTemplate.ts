@@ -4,8 +4,11 @@ export const componentTemplate = (params: { componentName: string, usingStitches
   if (usingStitchesJs) {
     return (
       `import React, { ReactNode } from "react"; \n` +
+      `// import { styled } from "@config/stitches.config"; \n` +
       `\n` +
-      `import { ${componentName}Container } from "./${componentName}.styles"; \n` +
+      `import { ${componentName}ContainerCSS, Styled${componentName}Container } from "./${componentName}.styles"; \n` +
+      `\n` +
+      `// const Styled${componentName}Container = styled("div", ${componentName}ContainerCSS); \n` +
       `\n` +
       `export type ${componentName}Props = { \n` +
       `\tchildren: ReactNode;  \n` +
