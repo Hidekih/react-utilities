@@ -1,5 +1,6 @@
 import { commands, ExtensionContext } from "vscode";
 
+import { generateTemplateString } from "./commands/generateTemplateString";
 import { reactCreateComponent } from "./commands/reactCreateComponent";
 import { reactCreateModule } from "./commands/reactCreateModule";
 
@@ -14,9 +15,15 @@ export function activate(context: ExtensionContext) {
     reactCreateModule
   );
 
+  let disposableGenerateTemplateString = commands.registerCommand(
+    "react-utilities.generateTemplateString",
+    generateTemplateString
+  );
+
   context.subscriptions.push(
     disposableReactCreateComponent,
-    disposableReactCreateModule
+    disposableReactCreateModule,
+    disposableGenerateTemplateString
   );
 }
 
