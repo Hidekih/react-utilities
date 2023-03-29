@@ -3,7 +3,7 @@
   "displayName": "React utilities",
   "publisher": "React-utilities",
   "description": "React utilities for create a component and more",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "icon": "react-utilities-icon.png",
   "engines": {
     "vscode": "^1.76.0"
