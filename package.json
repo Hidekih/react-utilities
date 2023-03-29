@@ -26,9 +26,19 @@
       {
         "command": "react-utilities.reactCreateModule",
         "title": "React: Create module"
+      },
+      {
+        "command": "react-utilities.generateTemplateString",
+        "title": "Generate template string"
       }
     ],
     "menus": {
+      "editor/context": [
+        {
+          "command": "react-utilities.generateTemplateString",
+          "group": "navigation"
+        }
+      ],
       "commandPalette": [
         {
           "command": "react-utilities.reactCreateComponent",

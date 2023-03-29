@@ -23,10 +23,7 @@ export const reactCreateComponent = async (uri: Uri) => {
 
   const inputData = await getInputData();
 
-  if (!inputData) {
-    window.showErrorMessage("Unexpected error!");
-    return;
-  }
+  if (!inputData) {return;}
 
   const { componentName, selectedOptions } = inputData;
 
@@ -77,8 +74,13 @@ const getInputData = async () => {
   const selectedOptions = await window.showQuickPick(items, {
     placeHolder: 'Selecione uma opção:',
     canPickMany: true,
-    title: "(2 / 2) - More options"
+    title: "(2 / 2) - More options",
   });
+
+  if (!selectedOptions) {
+    window.showErrorMessage("Component name cannot be empty!");
+    return;
+  }
 
   return {
     componentName,
