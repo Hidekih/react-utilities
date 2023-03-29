@@ -100,7 +100,7 @@ const writeComponent = (params: {
     mkdirSync(pathToNewFile, { recursive: true });
 
     const usingStitchesJs = selectedOptions?.some((opt) => opt === Options.stitches);
-    const stories = selectedOptions?.some((opt) => opt === Options.stitches);
+    const usingStories = selectedOptions?.some((opt) => opt === Options.stories);
 
     // Create index.ts file
     writeFile(pathToNewFile + "\\index.tsx", indexTemplate(componentName), (err) => {
@@ -120,7 +120,7 @@ const writeComponent = (params: {
     }
 
     // Create component.stories.tsx (for Storybook)
-    if (stories) {
+    if (usingStories) {
       writeFile(pathToNewFile + `\\${componentName}.stories.tsx`, storiesTemplate(componentName), (err) => {
         if (err) {window.showErrorMessage(err.message);}
       });
