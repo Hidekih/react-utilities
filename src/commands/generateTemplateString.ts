@@ -1,25 +1,31 @@
-import { mkdirSync, writeFile } from "node:fs";
+import { window } from 'vscode';
 
-import { commands, Uri, window, workspace } from 'vscode';
-
-import { Options } from '../enums/options.enum';
-import { getPathToNewDir } from '../utils/getPathToNewDir';
-import { indexTemplate } from '../templates/indexTemplate';
-import { componentTemplate } from '../templates/componentTemplate';
-import { stitchesJsStylesTemplate } from '../templates/stitchesJsStylesTemplate';
-import { storiesTemplate } from "../templates/storiesTemplate";
-
-const items = [ Options.stitches, Options.stories ];
-
-export const generateTemplateString = async (uri: Uri) => {
-  const workspaceUri =
-        workspace.workspaceFolders && workspace.workspaceFolders[0].uri;
-
-  const currentUri = uri || workspaceUri;
-  if (!currentUri) {
-    window.showErrorMessage("Workspace doesn't contain any folders.");
+export const generateTemplateString = async () => {
+ const editor = window.activeTextEditor;
+  if (!editor) {
+    window.showErrorMessage("Selected text cannot be empty!");
     return;
   }
 
-  window.showInformationMessage(`Command generate Template String callled`);
+  const selection = editor.selection;
+  const selectedText = editor.document.getText(selection);
+  const selectedLines = selectedText.split('\n');
+
+  const templateLines = selectedLines.map((line, index) => {
+    const parsedLine = line.replace(/  /g, "\\t").replace(/\r/g, "");
+
+    if (index != selectedLines.length - 1) {
+      return "`" + parsedLine + "` +\r";
+    }
+
+    return "`" + parsedLine + "`\r";
+  });
+
+  const templateString = templateLines.join("");
+
+  editor.edit(editBuilder => {
+    editBuilder.replace(selection, templateString);
+  });
+
+  window.showInformationMessage("Generate Template String successful!");
 };
