@@ -1,6 +1,6 @@
 # About
 
-This is the README for your extension "react-utilities". After writing up a brief description, we recommend including the following sections.
+v1.2.1
 
 ## Features
 
